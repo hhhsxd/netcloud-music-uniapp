@@ -11,11 +11,11 @@
 					<view class="list-item" v-for="item in listItem" :key="item.id" @tap="naviTo(item.id)">
 						
 						<view class="list-item-img">
-							<img :src="item.coverImgUrl" alt="">
+							<image :src="item.coverImgUrl"></image>
 						<text class="blogo">{{item.updateFrequency}}</text>
 						</view>
 						<view class="list-item-text">
-							<li v-for="(i,index) in item?.tracks" :key="i.id">{{i.first+`-`+i.second}}</li>
+							<view v-for="(i,index) in item?.tracks" :key="i.id">{{i.first+`-`+i.second}}</view>
 						</view> 
 					</view>
 				</view>
@@ -88,17 +88,19 @@
 				display:flex;
 				margin-bottom: 34rpx;
 				.list-item-img{
+				
 					position: relative;
 					width:212rpx;
-					heigth:212rpx;
+					height:212rpx;
 					border-radius:15rpx;
 					margin-right: 22rpx;
 					overflow: hidden;
-					img{
+					image{
 						width:100%;
 						height: 100%; 
+							flex-shrink: 1;
 					}
-					text{
+					.blogo{
 						position:absolute;
 						font-size: 20rpx;
 						left: 12rpx;
@@ -112,9 +114,7 @@
 					flex-direction:column;
 					justify-content: space-around;
 					color: gery;
-					li{
-						list-style: none;
-						display: block;
+					view{
 						width:480rpx;
 						text-overflow: ellipsis;
 						white-space: nowrap;

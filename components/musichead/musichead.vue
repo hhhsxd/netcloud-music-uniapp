@@ -43,27 +43,28 @@
 </script>
 
 <style lang="scss">
+	
 	.musichead{
 		width: 100%;
-		height: 75px;
-		font-size: 16px;
+		height: 150rpx;
+		font-size: 32rpx;
 		text-align: center;
 		display: flex;
 		align-items: center;
 		position: relative;
 		// color: white;
 		.head-icon{
-			width:90px;
+			width:180rpx;
 			// height: 28px;
 			// background-color: rgba(0,0,0,.4);
 			position:absolute;
-			top: 24.5px;
-			left: 9px;
-			border-radius:14px ;
-			border: 1px solid  #f7f7f7;
+			top: 49rpx;
+			left: 18rpx;
+			border-radius:28rpx ;
+			border: 2rpx solid  #f7f7f7;
 			display: flex;
 			justify-content: space-evenly;
-			line-height: 28px;
+			line-height: 56rpx;
 		}
 		.headtitle{
 			margin:0 auto;

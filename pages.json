@@ -35,10 +35,10 @@
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",
 		"navigationBarBackgroundColor": "#F8F8F8",
-		"backgroundColor": "#F8F8F8",
-		"usingComponents": {
-			"musichead":"/components/musichead"
-		}
+		"backgroundColor": "#F8F8F8"
+		// "usingComponents": {
+		// 	"musichead":"/components/musichead"
+		// }
 	},
 		"condition": { //模式配置，仅开发期间生效
 			"current": 0, //当前激活的模式（list 的索引项）
@@ -48,5 +48,9 @@
 			}
 			]
 		},
-	"uniIdRouter": {}
+	"uniIdRouter": {},
+	"easycom": {
+		"autoscan": true
+		
+	}
 }

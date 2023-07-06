@@ -3,7 +3,7 @@
 		<musichead title='歌单' :iconshow="true"></musichead>
 		<view class="list-head">
 			<view class="head-img">
-				<img :src="listDetail?.coverImgUrl" alt="">
+				<image :src="listDetail?.coverImgUrl" alt=""/>
 				<text class="cur iconfont icon-iconbofang">
 						{{formateCount(listDetail?.playCount)}}
 				</text>
@@ -11,7 +11,7 @@
 			<view class="desc" >
 				<text class="title">{{listDetail?.name}}</text>
 				<text class="host">
-					<img :src="listDetail.creator?.avatarUrl" alt="">
+					<image :src="listDetail.creator?.avatarUrl" alt="" />
 					{{listDetail.creator?.nickname}}
 				</text>
 				<text class="ske">{{listDetail?.description}}
@@ -88,7 +88,7 @@ $distance:30rpx;
 			}
 			.host{
 				font-size: 24rpx;
-			 img{
+			 image{
 					width:54rpx;
 					height: 54rpx;
 					vertical-align: middle;
@@ -110,7 +110,7 @@ $distance:30rpx;
 	    position: relative;
 	    margin-right:42rpx;
 	    flex-shrink: 0;
-	    img{
+	    image{
 	    	width:100%;
 	    	height: 100%;
 	    }

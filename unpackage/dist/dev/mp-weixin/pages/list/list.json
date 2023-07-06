@@ -1,0 +1,7 @@
+{
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "musichead": "../../components/musichead/musichead",
+    "song-item": "../../components/SongItem/SongItem"
+  }
+}

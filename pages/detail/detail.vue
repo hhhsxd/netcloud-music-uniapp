@@ -1,7 +1,6 @@
 <template>
-       
 	<view>
-		<img :src="songInfo.pic" alt="" class="backimg">
+		<image :src="songInfo.pic" alt="" class="backimg" />
 		<musichead :title="songInfo.name" :iconshow="true" ></musichead>
 		<view class="container">
 		<scroll-view scroll-y="true">
@@ -200,7 +199,10 @@
 	position: absolute;
 	filter:blur(30rpx) brightness(50%);
 	height: 100vh;
-	transform: scale(1.2) translateX(-146rpx) ;
+	width: 100%;
+	background-size: cover;
+	background-position: center;
+	transform: scale(1.2) ;
 }
 .player{
 	width:580rpx;
