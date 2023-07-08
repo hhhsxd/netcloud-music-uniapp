@@ -38,7 +38,6 @@
 				setTimeout(()=>{
 					listItem.value=res
 					isLoading.value=false
-			       console.log(listItem.value)
 				},1000)
 			}
 	}

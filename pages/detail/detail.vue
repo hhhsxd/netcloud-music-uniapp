@@ -109,7 +109,6 @@
 	// 	clearInterval(timer)
 	// 	})
 	const getMusicInfo=(e)=>{
-		console.log(e.id);
 		songIdStore.next_change(e.id)
 		
 		Promise.all([songDetail(e.id),songComment(e.id),songLyric(e.id),songSimi(e.id),songUrl(e.id)]).then((res)=>{
@@ -120,11 +119,9 @@
 			}
 			if(res[1].data.code==200){
 				songCom.value=res[1].data.hotComments
-				console.log(songCom.value);
 			}
 			if(res[2].data.code==200){
 				let lyric=res[2].data.lrc.lyric
-				console.log(res[2].data.lrc.lyric);
 				const reg=/\[([^\]]+)\]([^\[]+)/g
 				let result=[]
 				 lyric.replace(reg,($0,$1,$2)=>{
@@ -135,7 +132,6 @@
 			}
 			if(res[3].data.code==200){
 				songInfo.value.recom=res[3].data.songs
-				console.log(songInfo.value.recom);
 			}
 			if(res[4].data.code==200){
 				songInfo.value.music=res[4].data.data[0].url
@@ -144,7 +140,6 @@
 				listenLyric()
 				backgroundAudio.autoplay=true
 				backgroundAudio.onPlay(()=>{
-					console.log('开始播放');
 					isPlay.value=true
 					isRota.value=true
 					
@@ -152,13 +147,11 @@
 						
 				})
 					backgroundAudio.onPause(()=>{
-						console.log('pause');
 						isPlay.value=false
 						isRota.value=false
 						clearInterval(timer)
 					})
 					backgroundAudio.onEnded(()=>{
-						// console.log(songInfo.value.recom);
 						handlerToDetail(songIdStore.nextId)
 					})
 			}

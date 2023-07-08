@@ -5,7 +5,6 @@ export function topList(){
 		url:`${baseUrl}/toplist/detail`,
 		method:'GET',
 		success:res=>{
-			// console.log(res);
 			res=res.data.list.slice(0,4)
 			resolve(res)
 		}

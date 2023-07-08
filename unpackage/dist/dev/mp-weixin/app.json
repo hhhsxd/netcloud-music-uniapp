@@ -14,5 +14,6 @@
   "requiredBackgroundModes": [
     "audio"
   ],
-  "usingComponents": {}
+  "usingComponents": {},
+  "lazyCodeLoading":"requiredComponents"
 }

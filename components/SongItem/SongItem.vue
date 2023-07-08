@@ -27,9 +27,7 @@
 					default:'#c6c2bf'
 				}
 	})
-	onLoad(()=>{
-		// console.log(songItem);
-	})
+
 </script>
 
 <style lang="scss" scoped>

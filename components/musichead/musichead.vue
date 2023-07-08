@@ -37,7 +37,6 @@
 	}
 	const ids=ref()
 	onLoad((e)=>{
-		console.log(e);
 		ids.value=e.id
 	})
 </script>
@@ -47,6 +46,7 @@
 	.musichead{
 		width: 100%;
 		height: 150rpx;
+		line-height: 150rpx;
 		font-size: 32rpx;
 		text-align: center;
 		display: flex;

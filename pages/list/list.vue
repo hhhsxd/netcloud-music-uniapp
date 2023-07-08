@@ -52,7 +52,6 @@
 		uni.showLoading({
 			title:'加载中...'
 		})
-		console.log(e.id);
 		playList(e.id).then((res)=>{
 			if(res.data.code==200){
 			listDetail.value=res.data.playlist

@@ -81,7 +81,6 @@
 		searchHot().then((res)=>{
 			if(res.data.code==200)
 			hotList.value=res.data.data
-			console.log(hotList);
 		})
 		uni.getStorage({
 			key:'inputHistory',
@@ -98,15 +97,11 @@
 		}
 		inputIn.value=2
 		ival.value=e
-		console.log(ival.value);
 		searchsuggest(ival.value).then((res)=>{
-			// console.log(res);
 			recArr.value=res.data.result.allMatch
-			console.log(recArr.value);
 		})
 	}
 	const handlerResult=(e)=>{
-		console.log(e);
 		e=e.trim()
 		if(!e){
 			inputIn.value=1
@@ -123,9 +118,7 @@
 		})
 		inputIn.value=3
 		searchKey(e).then((res)=>{
-			console.log(res);
 			endResult.value=res.data.result.songs
-			console.log(endResult);
 		})
 	}
 	const handleToClose=()=>{
