@@ -1,8 +1,8 @@
 <template>
 	<view>
-		<musichead title="搜索" :iconshow="true" iconcolor="black"></musichead>
+		<musichead title="搜索" :iconshow="true" white="false"></musichead>
 		<view class="container">
-			<scroll-view scroll-y="true" >
+			<scroll-view scroll-y="true" show-scrollbar="false" enhanced="true">
 			<view class="search">
 				<text class="iconfont icon-sousuo fangda"></text>
 				<input type="text" placeholder="搜索歌曲"  @input="searchInput(searchWord)" @confirm="handlerResult(searchWord)" v-model="searchWord"/>

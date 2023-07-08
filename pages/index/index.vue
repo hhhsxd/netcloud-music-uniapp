@@ -1,8 +1,8 @@
 <template>
 	<view>
-		<musichead title="网易云音乐" :iconshow="false" iconcolor="black"></musichead>
+		<musichead title="网易云音乐" :iconshow="false" :white="false"></musichead>
 		<view class="container">
-			<scroll-view scroll-y="true">
+			<scroll-view scroll-y="true"  show-scrollbar="false" enhanced="true">
 				<view class="search" @tap="handleTosearch">
 					<text class="iconfont icon-sousuo"></text>
 					<input type="text" placeholder="搜索歌曲"/>

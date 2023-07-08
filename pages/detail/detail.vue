@@ -1,9 +1,9 @@
 <template>
 	<view>
 		<image :src="songInfo.pic" alt="" class="backimg" />
-		<musichead :title="songInfo.name" :iconshow="true" ></musichead>
+		<musichead :title="songInfo.name" :iconshow="true" :white="true"></musichead>
 		<view class="container">
-		<scroll-view scroll-y="true">
+		<scroll-view scroll-y="true" show-scrollbar="false" enhanced="true">
 		  <view class="player" @tap="handleToPause">
 			<text class="needle"></text>
 			<img :src="songInfo.pic" alt="" class="al-cover" :class="{run:isRota}" >

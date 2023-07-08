@@ -24,7 +24,6 @@ const _sfc_main = {
       common_vendor.index.showLoading({
         title: "加载中..."
       });
-      console.log(e.id);
       common_api.playList(e.id).then((res) => {
         if (res.data.code == 200) {
           listDetail.value = res.data.playlist;
@@ -44,7 +43,8 @@ const _sfc_main = {
       return {
         a: common_vendor.p({
           title: "歌单",
-          iconshow: true
+          iconshow: true,
+          white: "true"
         }),
         b: (_a = listDetail.value) == null ? void 0 : _a.coverImgUrl,
         c: common_vendor.t(common_vendor.unref(common_utils.formateCount)((_b = listDetail.value) == null ? void 0 : _b.playCount)),

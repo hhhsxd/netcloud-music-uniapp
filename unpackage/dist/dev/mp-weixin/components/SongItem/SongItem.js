@@ -16,8 +16,6 @@ const _sfc_main = {
   },
   setup(__props) {
     const songItem = __props;
-    common_vendor.onLoad(() => {
-    });
     return (_ctx, _cache) => {
       var _a;
       return common_vendor.e({

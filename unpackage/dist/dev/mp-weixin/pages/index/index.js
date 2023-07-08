@@ -21,7 +21,6 @@ const _sfc_main = {
         setTimeout(() => {
           listItem.value = res;
           isLoading.value = false;
-          console.log(listItem.value);
         }, 1e3);
       }
     };
@@ -43,7 +42,7 @@ const _sfc_main = {
         a: common_vendor.p({
           title: "网易云音乐",
           iconshow: false,
-          iconcolor: "black"
+          white: false
         }),
         b: common_vendor.o(handleTosearch),
         c: common_vendor.f(listItem.value, (item, k0, i0) => {

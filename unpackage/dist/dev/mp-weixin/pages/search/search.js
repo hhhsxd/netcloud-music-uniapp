@@ -25,7 +25,6 @@ const _sfc_main = {
       common_api.searchHot().then((res) => {
         if (res.data.code == 200)
           hotList.value = res.data.data;
-        console.log(hotList);
       });
       common_vendor.index.getStorage({
         key: "inputHistory",
@@ -40,14 +39,11 @@ const _sfc_main = {
       }
       inputIn.value = 2;
       ival.value = e;
-      console.log(ival.value);
       common_api.searchsuggest(ival.value).then((res) => {
         recArr.value = res.data.result.allMatch;
-        console.log(recArr.value);
       });
     };
     const handlerResult = (e) => {
-      console.log(e);
       e = e.trim();
       if (!e) {
         inputIn.value = 1;
@@ -64,9 +60,7 @@ const _sfc_main = {
       });
       inputIn.value = 3;
       common_api.searchKey(e).then((res) => {
-        console.log(res);
         endResult.value = res.data.result.songs;
-        console.log(endResult);
       });
     };
     const handleToClose = () => {
@@ -91,7 +85,7 @@ const _sfc_main = {
         a: common_vendor.p({
           title: "搜索",
           iconshow: true,
-          iconcolor: "black"
+          white: "false"
         }),
         b: common_vendor.o([($event) => common_vendor.isRef(searchWord) ? searchWord.value = $event.detail.value : searchWord = $event.detail.value, ($event) => searchInput(common_vendor.unref(searchWord))]),
         c: common_vendor.o(($event) => handlerResult(common_vendor.unref(searchWord))),

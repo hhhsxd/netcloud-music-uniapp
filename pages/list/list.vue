@@ -1,6 +1,6 @@
 <template>
 	<view :style="{'background-image':`url(${listDetail?.coverImgUrl})`}">
-		<musichead title='歌单' :iconshow="true"></musichead>
+		<musichead title='歌单' :iconshow="true" white="true"></musichead>
 		<view class="list-head">
 			<view class="head-img">
 				<image :src="listDetail?.coverImgUrl" alt=""/>

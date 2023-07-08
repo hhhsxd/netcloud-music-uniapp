@@ -10,9 +10,9 @@ const _sfc_main = {
       type: Boolean,
       default: true
     },
-    iconcolor: {
-      type: String,
-      default: "white"
+    white: {
+      type: Boolean,
+      default: false
     }
   },
   setup(__props) {
@@ -26,7 +26,6 @@ const _sfc_main = {
     };
     const ids = common_vendor.ref();
     common_vendor.onLoad((e) => {
-      console.log(e);
       ids.value = e.id;
     });
     return (_ctx, _cache) => {
@@ -37,7 +36,7 @@ const _sfc_main = {
         c: common_vendor.o(toHome)
       } : {}, {
         d: common_vendor.t(__props.title),
-        e: __props.iconcolor
+        e: __props.white ? 1 : ""
       });
     };
   }

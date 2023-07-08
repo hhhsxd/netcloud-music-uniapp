@@ -1,1 +1,1 @@
-<view class="musichead" style="{{'color:' + e}}"><view wx:if="{{a}}" class="head-icon"><text class="iconfont icon-fanhuijiantou" bindtap="{{b}}"></text> | <text class="iconfont icon-shouye" bindtap="{{c}}"></text></view><view class="headtitle">{{d}}</view></view>
+<view class="{{['musichead', e && 'isWhite']}}"><view wx:if="{{a}}" class="head-icon"><text class="iconfont icon-fanhuijiantou" bindtap="{{b}}"></text> | <text class="iconfont icon-shouye" bindtap="{{c}}"></text></view><view class="headtitle">{{d}}</view></view>

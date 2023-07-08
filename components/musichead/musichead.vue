@@ -1,5 +1,5 @@
 <template>
-	<view class="musichead" :style="{color:iconcolor}">
+	<view class="musichead" :class="{isWhite:white}">
 		<view class="head-icon" v-if="iconshow" >
 			 <text class="iconfont icon-fanhuijiantou" @tap="backTo"></text> | <text class="iconfont icon-shouye" @tap="toHome"></text>
 		</view>
@@ -22,9 +22,9 @@
 			type:Boolean,
 			default:true
 		},
-		iconcolor:{
-			type:String,
-			default:'white'
+		white:{
+			type:Boolean,
+			default:false
 		}
 	})
 	const backTo=()=>{
@@ -42,36 +42,39 @@
 </script>
 
 <style lang="scss">
-	
 	.musichead{
 		width: 100%;
-		height: 150rpx;
-		line-height: 150rpx;
-		font-size: 32rpx;
-		text-align: center;
+		height:80px;
+		line-height: 80px;
+		font-size: 16px;
 		display: flex;
 		align-items: center;
-		position: relative;
-		// color: white;
+		display: relative;
+		color:black;
 		.head-icon{
-			width:180rpx;
-			// height: 28px;
-			// background-color: rgba(0,0,0,.4);
-			position:absolute;
-			top: 49rpx;
-			left: 18rpx;
-			border-radius:28rpx ;
-			border: 2rpx solid  #f7f7f7;
+			width:90px;
+			height: 31px;
+			line-height: 31px;
+			margin-left: 8px;
+			border-radius:15px;
+			// border: 1px solid white;
+			background-color: rgba(0, 0,0,0.4);
 			display: flex;
 			justify-content: space-evenly;
-			line-height: 56rpx;
+			z-index: 999;
 		}
 		.headtitle{
-			margin:0 auto;
 			width:330rpx;
 			white-space:nowrap;
 			overflow: hidden;
 			text-overflow:ellipsis;
+			position: absolute;
+			left:210rpx;
+			text-align: center;
+			
 		}
+	}
+	.isWhite{
+		color: white;
 	}
 </style>

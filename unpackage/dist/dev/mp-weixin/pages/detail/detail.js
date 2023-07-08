@@ -33,7 +33,6 @@ const _sfc_main = {
       clearInterval(timer);
     });
     const getMusicInfo = (e) => {
-      console.log(e.id);
       songIdStore.next_change(e.id);
       Promise.all([common_api.songDetail(e.id), common_api.songComment(e.id), common_api.songLyric(e.id), common_api.songSimi(e.id), common_api.songUrl(e.id)]).then((res) => {
         if (res[0].data.code == 200) {
@@ -42,11 +41,9 @@ const _sfc_main = {
         }
         if (res[1].data.code == 200) {
           songCom.value = res[1].data.hotComments;
-          console.log(songCom.value);
         }
         if (res[2].data.code == 200) {
           let lyric = res[2].data.lrc.lyric;
-          console.log(res[2].data.lrc.lyric);
           const reg = /\[([^\]]+)\]([^\[]+)/g;
           let result = [];
           lyric.replace(reg, ($0, $1, $2) => {
@@ -57,7 +54,6 @@ const _sfc_main = {
         }
         if (res[3].data.code == 200) {
           songInfo.value.recom = res[3].data.songs;
-          console.log(songInfo.value.recom);
         }
         if (res[4].data.code == 200) {
           songInfo.value.music = res[4].data.data[0].url;
@@ -66,13 +62,11 @@ const _sfc_main = {
           listenLyric();
           backgroundAudio.autoplay = true;
           backgroundAudio.onPlay(() => {
-            console.log("开始播放");
             isPlay.value = true;
             isRota.value = true;
             listenLyric();
           });
           backgroundAudio.onPause(() => {
-            console.log("pause");
             isPlay.value = false;
             isRota.value = false;
             clearInterval(timer);
@@ -119,7 +113,8 @@ const _sfc_main = {
         a: songInfo.value.pic,
         b: common_vendor.p({
           title: songInfo.value.name,
-          iconshow: true
+          iconshow: true,
+          white: true
         }),
         c: songInfo.value.pic,
         d: isRota.value ? 1 : "",

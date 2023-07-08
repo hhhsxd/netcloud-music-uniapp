@@ -25,29 +25,34 @@
 /* 文章场景相关 */
 .musichead {
   width: 100%;
-  height: 150rpx;
-  line-height: 150rpx;
-  font-size: 32rpx;
-  text-align: center;
+  height: 80px;
+  line-height: 80px;
+  font-size: 16px;
   display: flex;
   align-items: center;
-  position: relative;
+  display: relative;
+  color: black;
 }
 .musichead .head-icon {
-  width: 180rpx;
-  position: absolute;
-  top: 49rpx;
-  left: 18rpx;
-  border-radius: 28rpx;
-  border: 2rpx solid #f7f7f7;
+  width: 90px;
+  height: 31px;
+  line-height: 31px;
+  margin-left: 8px;
+  border-radius: 15px;
+  background-color: rgba(0, 0, 0, 0.4);
   display: flex;
   justify-content: space-evenly;
-  line-height: 56rpx;
+  z-index: 999;
 }
 .musichead .headtitle {
-  margin: 0 auto;
   width: 330rpx;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  position: absolute;
+  left: 210rpx;
+  text-align: center;
+}
+.isWhite {
+  color: white;
 }
