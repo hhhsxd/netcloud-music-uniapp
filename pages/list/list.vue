@@ -23,7 +23,7 @@
 			分享给微信好友
 		</button>
 		<view class="list-item">
-			<view class="handleAll">
+			<view class="handleAll" @tap="naviToDetail(listDetail.tracks[0].id)">
 			   <text class="iconfont icon-iconbofang"></text>
 			   <text>播放全部</text>
 			   <text>（共{{listDetail?.trackCount}}首）</text>

@@ -104,6 +104,7 @@ const _sfc_main = {
       }, 500);
     };
     const handlerToDetail = (id) => {
+      songIdStore.init_ids(songInfo.value.recom);
       common_vendor.index.navigateTo({
         url: `/pages/detail/detail?id=${id}`
       });
@@ -131,7 +132,8 @@ const _sfc_main = {
           };
         }),
         i: "translateY(" + -(common_vendor.unref(lyricIndex) - 1) * 82 + "rpx)",
-        j: common_vendor.f(songInfo.value.recom, (i, k0, i0) => {
+        j: common_vendor.o(($event) => handlerToDetail(songInfo.value.recom[0].id)),
+        k: common_vendor.f(songInfo.value.recom, (i, k0, i0) => {
           return {
             a: i.album.picUrl,
             b: common_vendor.o(($event) => handlerToDetail(i.id), i.id),
@@ -147,9 +149,9 @@ const _sfc_main = {
             e: i.id
           };
         }),
-        k: songCom.value.length == 0
+        l: songCom.value.length == 0
       }, songCom.value.length == 0 ? {} : {}, {
-        l: common_vendor.f(songCom.value, (i, k0, i0) => {
+        m: common_vendor.f(songCom.value, (i, k0, i0) => {
           return {
             a: i.user.avatarUrl,
             b: common_vendor.t(i.user.nickname),

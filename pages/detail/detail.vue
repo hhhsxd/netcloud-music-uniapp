@@ -28,7 +28,7 @@
 				 <view>
 				 	喜欢听这首歌的人也喜欢听
 				 </view>
-					<view>
+					<view @tap="handlerToDetail(songInfo.recom[0].id)">
 					<text class="iconfont icon-iconbofang right">一键收听</text>
 					</view>
 		   	 </view>
@@ -187,6 +187,7 @@
 		  
 	}
 	const handlerToDetail=(id)=>{
+		songIdStore.init_ids(songInfo.value.recom)
 		uni.navigateTo({
 			url:`/pages/detail/detail?id=${id}`
 		})

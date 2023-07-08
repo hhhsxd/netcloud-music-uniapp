@@ -53,7 +53,8 @@ const _sfc_main = {
         f: common_vendor.t((_e = listDetail.value.creator) == null ? void 0 : _e.nickname),
         g: common_vendor.t((_f = listDetail.value) == null ? void 0 : _f.description),
         h: common_vendor.t((_g = listDetail.value) == null ? void 0 : _g.trackCount),
-        i: common_vendor.f((_h = listDetail.value) == null ? void 0 : _h.tracks, (i, index, i0) => {
+        i: common_vendor.o(($event) => naviToDetail(listDetail.value.tracks[0].id)),
+        j: common_vendor.f((_h = listDetail.value) == null ? void 0 : _h.tracks, (i, index, i0) => {
           var _a2, _b2;
           return {
             a: common_vendor.t(index + 1),
@@ -70,7 +71,7 @@ const _sfc_main = {
             e: common_vendor.o(($event) => naviToDetail(i.id), i.id)
           };
         }),
-        j: `url(${(_i = listDetail.value) == null ? void 0 : _i.coverImgUrl})`
+        k: `url(${(_i = listDetail.value) == null ? void 0 : _i.coverImgUrl})`
       };
     };
   }
