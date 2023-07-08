@@ -1,5 +1,6 @@
 "use strict";
 const common_vendor = require("../../common/vendor.js");
+const store_songid = require("../../store/songid.js");
 const common_utils = require("../../common/utils.js");
 const common_api = require("../../common/api.js");
 require("../../common/config.js");
@@ -18,6 +19,7 @@ const _sfc_main = {
   setup(__props) {
     const listDetail = common_vendor.ref({});
     const isLoading = common_vendor.ref(true);
+    const songIdStore = store_songid.useSongIdStore();
     common_vendor.onLoad((e) => {
       common_vendor.index.showLoading({
         title: "加载中..."
@@ -26,7 +28,7 @@ const _sfc_main = {
       common_api.playList(e.id).then((res) => {
         if (res.data.code == 200) {
           listDetail.value = res.data.playlist;
-          console.log(listDetail);
+          songIdStore.init_ids(res.data.playlist.trackIds);
           isLoading.value = false;
           common_vendor.index.hideLoading();
         }

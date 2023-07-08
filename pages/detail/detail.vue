@@ -81,11 +81,13 @@
 </template>
 
 <script setup>
+	import {useSongIdStore} from "@/store/songid.js"
 	import SongItem from "@/components/SongItem/SongItem.vue"
 	import {formateTime} from "@/common/utils.js"
 	import {songDetail,songComment,songLyric,songSimi,songUrl} from "@/common/api.js"
 	import { onLoad,onUnload,onHide } from '@dcloudio/uni-app';
 	import {ref} from "vue"
+	const songIdStore=useSongIdStore()
     const songInfo=ref({})
 	const songCom=ref([])
 	const isPlay=ref(true)
@@ -95,6 +97,7 @@
 	let showLyric=[]
 	let timer=null
 	onLoad((e)=>{	
+		
 		getMusicInfo(e)
 	})
 	onUnload(()=>{
@@ -106,6 +109,9 @@
 	// 	clearInterval(timer)
 	// 	})
 	const getMusicInfo=(e)=>{
+		console.log(e.id);
+		songIdStore.next_change(e.id)
+		
 		Promise.all([songDetail(e.id),songComment(e.id),songLyric(e.id),songSimi(e.id),songUrl(e.id)]).then((res)=>{
 	
 			if(res[0].data.code==200){
@@ -152,7 +158,8 @@
 						clearInterval(timer)
 					})
 					backgroundAudio.onEnded(()=>{
-						console.log(songInfo.value.recom);
+						// console.log(songInfo.value.recom);
+						handlerToDetail(songIdStore.nextId)
 					})
 			}
 			})

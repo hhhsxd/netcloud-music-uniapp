@@ -1,3 +1,3 @@
 "use strict";
-const baseUrl = "http://localhost:3000";
+const baseUrl = "https://service-eykbvip5-1319253324.cd.apigw.tencentcs.com/release/";
 exports.baseUrl = baseUrl;

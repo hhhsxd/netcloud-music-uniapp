@@ -1,5 +1,6 @@
 "use strict";
 const common_vendor = require("../../common/vendor.js");
+const store_songid = require("../../store/songid.js");
 const common_utils = require("../../common/utils.js");
 const common_api = require("../../common/api.js");
 require("../../common/config.js");
@@ -15,6 +16,7 @@ const SongItem = () => "../../components/SongItem/SongItem.js";
 const _sfc_main = {
   __name: "detail",
   setup(__props) {
+    const songIdStore = store_songid.useSongIdStore();
     const songInfo = common_vendor.ref({});
     const songCom = common_vendor.ref([]);
     const isPlay = common_vendor.ref(true);
@@ -31,6 +33,8 @@ const _sfc_main = {
       clearInterval(timer);
     });
     const getMusicInfo = (e) => {
+      console.log(e.id);
+      songIdStore.next_change(e.id);
       Promise.all([common_api.songDetail(e.id), common_api.songComment(e.id), common_api.songLyric(e.id), common_api.songSimi(e.id), common_api.songUrl(e.id)]).then((res) => {
         if (res[0].data.code == 200) {
           songInfo.value.name = res[0].data.songs[0].name;
@@ -74,7 +78,7 @@ const _sfc_main = {
             clearInterval(timer);
           });
           backgroundAudio.onEnded(() => {
-            console.log(songInfo.value.recom);
+            handlerToDetail(songIdStore.nextId);
           });
         }
       });

@@ -39,12 +39,14 @@
 </template>
 
 <script setup>
+	import {useSongIdStore} from "@/store/songid.js"
 	import {formateCount} from "@/common/utils.js"
 	import {ref} from 'vue'
 	import {playList} from "@/common/api.js"
 	import { onLoad } from '@dcloudio/uni-app';
 	const listDetail=ref({})
 	const isLoading=ref(true)
+	const songIdStore=useSongIdStore()
 	
 	onLoad((e)=>{
 		uni.showLoading({
@@ -54,7 +56,8 @@
 		playList(e.id).then((res)=>{
 			if(res.data.code==200){
 			listDetail.value=res.data.playlist
-			console.log(listDetail);
+			
+			songIdStore.init_ids(res.data.playlist.trackIds)
 			isLoading.value=false
 			uni.hideLoading()
 			}
