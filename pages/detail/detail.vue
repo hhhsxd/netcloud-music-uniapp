@@ -18,7 +18,7 @@
 		   	</view>
 		   </view>
 		   <view class="getmore">
-				在网易云查看更多歌词
+				在官方APP查看更多歌词
 			</view>
 			<view class="share">
 				<button type="default">分享给微信好友</button>
@@ -46,7 +46,7 @@
 					精彩评论
 				</view>
 				<view class="nullComment" v-if="songCom.length==0">
-					去网易云音乐APP写下第一条评论吧~
+					去官方APP写下第一条评论吧~
 				</view>
 				<view class="comment-single" v-for="i in songCom" :key="i.id">
 				<view class="costomer-item">
@@ -195,7 +195,7 @@
 	
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .backimg{
 	position: absolute;
 	filter:blur(30rpx) brightness(50%);

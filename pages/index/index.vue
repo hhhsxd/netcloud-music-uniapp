@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<musichead title="网易云音乐" :iconshow="false" :white="false"></musichead>
+		<musichead title="我的音乐小程序" :iconshow="false" :white="false"></musichead>
 		<view class="container">
 			<scroll-view scroll-y="true"  show-scrollbar="false" enhanced="true">
 				<view class="search" @tap="handleTosearch">

@@ -1,5 +1,6 @@
 <template>
-	<view class="musichead" :class="{isWhite:white}">
+	<view class="bornhead" :style="{height:`${statusbarheight}px`}"></view>
+	<view class="musichead" :class="{isWhite:white}" :style="{height:`${barheight}px`}">
 		<view class="head-icon" v-if="iconshow" >
 			 <text class="iconfont icon-fanhuijiantou" @tap="backTo"></text> | <text class="iconfont icon-shouye" @tap="toHome"></text>
 		</view>
@@ -11,7 +12,6 @@
 </template>
 
 <script setup>
-	// import {defineProps} from "vue"
 	import {ref} from 'vue'
 	import {onLoad} from "@dcloudio/uni-app"
 	defineProps({
@@ -36,16 +36,21 @@
 		})
 	}
 	const ids=ref()
+	const statusbarheight=ref(0)
+	const barheight=ref(0)
 	onLoad((e)=>{
 		ids.value=e.id
+		statusbarheight.value=uni.getSystemInfoSync().statusBarHeight
+		const {top,height}=wx.getMenuButtonBoundingClientRect()
+		barheight.value=height?height+(top-statusbarheight.value)*2:38
 	})
 </script>
 
 <style lang="scss">
 	.musichead{
 		width: 100%;
-		height:80px;
-		line-height: 80px;
+		// height:var(--status-bar-height);
+		// line-height:var(--status-bar-height);
 		font-size: 16px;
 		display: flex;
 		align-items: center;

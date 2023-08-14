@@ -25,18 +25,25 @@ const _sfc_main = {
       });
     };
     const ids = common_vendor.ref();
+    const statusbarheight = common_vendor.ref(0);
+    const barheight = common_vendor.ref(0);
     common_vendor.onLoad((e) => {
       ids.value = e.id;
+      statusbarheight.value = common_vendor.index.getSystemInfoSync().statusBarHeight;
+      const { top, height } = common_vendor.wx$1.getMenuButtonBoundingClientRect();
+      barheight.value = height ? height + (top - statusbarheight.value) * 2 : 38;
     });
     return (_ctx, _cache) => {
       return common_vendor.e({
-        a: __props.iconshow
+        a: `${statusbarheight.value}px`,
+        b: __props.iconshow
       }, __props.iconshow ? {
-        b: common_vendor.o(backTo),
-        c: common_vendor.o(toHome)
+        c: common_vendor.o(backTo),
+        d: common_vendor.o(toHome)
       } : {}, {
-        d: common_vendor.t(__props.title),
-        e: __props.white ? 1 : ""
+        e: common_vendor.t(__props.title),
+        f: __props.white ? 1 : "",
+        g: `${barheight.value}px`
       });
     };
   }

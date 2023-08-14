@@ -7599,3 +7599,4 @@ exports.ref = ref;
 exports.resolveComponent = resolveComponent;
 exports.t = t;
 exports.unref = unref;
+exports.wx$1 = wx$1;

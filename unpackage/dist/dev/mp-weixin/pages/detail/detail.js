@@ -137,7 +137,7 @@ const _sfc_main = {
           return {
             a: i.album.picUrl,
             b: common_vendor.o(($event) => handlerToDetail(i.id), i.id),
-            c: "7fb202ba-1-" + i0,
+            c: "eca06f3c-1-" + i0,
             d: common_vendor.p({
               name: i.name,
               privType: i.privilege.flag,
@@ -165,5 +165,5 @@ const _sfc_main = {
     };
   }
 };
-const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__file", "D:/Download/网易云uni-app/Music2-self/pages/detail/detail.vue"]]);
+const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__scopeId", "data-v-eca06f3c"], ["__file", "D:/Download/网易云uni-app/Music2-self/pages/detail/detail.vue"]]);
 wx.createPage(MiniProgramPage);

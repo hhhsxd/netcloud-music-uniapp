@@ -40,7 +40,7 @@ const _sfc_main = {
     return (_ctx, _cache) => {
       return {
         a: common_vendor.p({
-          title: "网易云音乐",
+          title: "我的音乐小程序",
           iconshow: false,
           white: false
         }),
